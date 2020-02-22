@@ -19,7 +19,7 @@ Load the directory with VSCode::
 Building
 ==========
 
-To build, in VSCode command prompt, **Tasks: Run Task > Build Project**. This will trigger
+To build, in VSCode command prompt, ``Tasks: Run Task > Build Project``. This will trigger
 buildout to build the project.
 
 Build script have been tested on Fedora 30, on ``Python 3.7``. Project relies on
