@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ ! -d "./venv" ];then
     echo "Initializing Virtualenv"
     virtualenv -p python3 venv
@@ -18,3 +20,9 @@ fi
 echo "Starting Build ..."
 
 ./bin/buildout -vvv
+
+echo "Downloading Resources .."
+
+./bin/python dev/morpcc/download-resources.py
+
+echo "Build Complete!"
