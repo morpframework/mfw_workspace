@@ -62,6 +62,10 @@ MorpCC: Test Project`` and ``Tasks: Run Task > MorpFW: Test Project``
 
 Demo CMS shall be running at http://127.0.0.1:5000
 
+Remember that you will need to initialize catalog indexes before you can create
+a record in entities. To initialize catalog indexes, go to http://127.0.0.1:5000/index/
+and click ``Upgrade database schema``
+
 Getting Help / Contacting The Author
 ====================================
 
