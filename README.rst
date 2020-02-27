@@ -70,14 +70,44 @@ Docker Image
 =============
 
 Docker image available in https://hub.docker.com/r/kagesenshi/morpcc of which 
-its entry point is configured to the ``morpfw`` command.
+its entry point is configured to the ``morpfw`` command. Pull the image with::
 
-To start, first create a directory, lets say ``/etc/morpcc``, and put
-``settings.yml`` in the directory. Then you can start the daemon with::
+   docker pull kagesenshi/morpcc:latest
+
+To start, first create a directory, lets say ``/etc/morpcc``, and following
+files & directories in it:
+
+* ``settings.yml``
+* ``alembic.ini``
+* ``migrations/``
+
+Then you can generate migrations with::
+
+   docker run --rm -v /etc/morpcc:/instance/ kagesenshi/morpcc \
+              migration revision --autogenerate -m "initial"
+
+Run migrations with::
+
+   docker run --rm -v /etc/morpcc:/instance/ kagesenshi/morpcc \
+              migration update head
+
+And start the application with::
 
    docker run --rm -v /etc/morpcc:/instance/ \
               -p 5000:5000 kagesenshi/morpcc \
-              start
+              migration update head
+
+
+Workers and scheduler can be started with the following commands::
+
+   # worker
+   docker run --rm -v /etc/morpcc:/instance/ kagesenshi/morpcc \
+              solo-worker
+
+   # scheduler
+   docker run --rm -v /etc/morpcc:/instance/ kagesenshi/morpcc \
+              scheduler
+
 
 Getting Help / Contacting The Author
 ====================================
