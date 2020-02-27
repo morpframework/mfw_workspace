@@ -66,6 +66,19 @@ Remember that you will need to initialize catalog indexes before you can create
 a record in entities. To initialize catalog indexes, go to http://127.0.0.1:5000/index/
 and click ``Upgrade database schema``
 
+Docker Image
+=============
+
+Docker image available in https://hub.docker.com/r/kagesenshi/morpcc of which 
+its entry point is configured to the ``morpfw`` command.
+
+To start, first create a directory, lets say ``/etc/morpcc``, and put
+``settings.yml`` in the directory. Then you can start the daemon with::
+
+   docker run --rm -v /etc/morpcc:/instance/ \
+              -p 5000:5000 kagesenshi/morpcc \
+              start
+
 Getting Help / Contacting The Author
 ====================================
 
