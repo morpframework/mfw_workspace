@@ -19,7 +19,7 @@ fi
 
 echo "Starting Build ..."
 
-./bin/buildout -vvv
+./bin/buildout -vvv $@
 
 echo "Downloading Resources .."
 
