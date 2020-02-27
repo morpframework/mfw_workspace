@@ -95,7 +95,7 @@ And start the application with::
 
    docker run --rm -v /etc/morpcc:/instance/ \
               -p 5000:5000 kagesenshi/morpcc \
-              migration update head
+              start
 
 
 Workers and scheduler can be started with the following commands::
