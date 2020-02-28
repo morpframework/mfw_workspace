@@ -81,6 +81,8 @@ files & directories in it:
 * ``alembic.ini``
 * ``migrations/``
 
+Update ``settings.yml`` and ``alembic.ini`` with your database settings.
+
 Then you can generate migrations with::
 
    docker run --rm -v /etc/morpcc:/instance/ kagesenshi/morpcc \
