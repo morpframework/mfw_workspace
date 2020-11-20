@@ -11,7 +11,7 @@ RUN dnf install python3 python3-devel wget curl tar unzip\
     python3-virtualenv git postgresql-devel mysql-devel \
     sqlite-devel -y && dnf clean all
 
-RUN mkdir -p /opt/morpcc/
+RUN mkdir -p /opt/morpcc/ && mkdir -p /usr/share/nltk_data
 
 WORKDIR /opt/morpcc/
 
@@ -23,7 +23,7 @@ WORKDIR /opt/morpcc/
 
 RUN /usr/bin/python3 bootstrap-buildout.py
 
-LABEL rev="2020022701"
+LABEL rev="2020030403"
 
 RUN bash ./build.sh -c buildout-docker.cfg && rm -rf downloads/*
 
