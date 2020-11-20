@@ -48,6 +48,11 @@
             "type": "shell",
             "command": "./bin/pytest --cov-report html --cov=morpfw --annotate-output=annotations.json --html=report.html --self-contained-html -s dev/morpcc/morpcc",
             "group": "test",
+            "options": {
+                "env": {
+                    "ELASTICSEARCH_EXECUTABLE": "${workspaceRoot}/parts/elasticsearch/bin/elasticsearch"
+                }
+            }
         },
         {
             "label": "MorpFW: Test Project",
@@ -65,8 +70,13 @@
             "type": "shell",
             "command": "./bin/pytest -s ${relativeFile}",
             "group": "test",
+            "options": {
+                "env": {
+                    "ELASTICSEARCH_EXECUTABLE": "${workspaceRoot}/parts/elasticsearch/bin/elasticsearch"
+                }
+            }
         },
-                {
+        {
             "label": "Update Database",
             "type": "shell",
             "command": "./bin/alembic upgrade head",
@@ -95,6 +105,73 @@
             },
             "options": {
                 "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
+            "label": "Build docs (rulez)",
+            "type": "shell",
+            "command": "./bin/sphinx-build dev/rulez/docs docs-html/rulez/",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
+            "label": "Build docs (inverter)",
+            "type": "shell",
+            "command": "./bin/sphinx-build dev/inverter/docs docs-html/inverter/",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
+            "label": "Build docs (morpfw)",
+            "type": "shell",
+            "command": "./bin/sphinx-build dev/morpfw/docs docs-html/morpfw/",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
+            "label": "Serve Docs",
+            "type": "shell",
+            "command": "../bin/python -m http.server",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/docs-html/"
             },
             "problemMatcher": null
         }
