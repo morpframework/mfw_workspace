@@ -160,6 +160,40 @@
             "problemMatcher": null
         },
         {
+            "label": "Build docs (morpcc)",
+            "type": "shell",
+            "command": "./bin/sphinx-build dev/morpcc/docs docs-html/morpcc/",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
+            "label": "Build docs (mfw-template)",
+            "type": "shell",
+            "command": "./bin/sphinx-build dev/mfw_template/docs docs-html/mfw_template/",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null
+        },
+        {
             "label": "Serve Docs",
             "type": "shell",
             "command": "../bin/python -m http.server",
