@@ -109,6 +109,22 @@
             "problemMatcher": null
         },
         {
+            "label": "MorpCC: Start Shell",
+            "type": "shell",
+            "command": "./bin/morpfw -s ./dev/morpcc/morpcc/tests/democms/settings.yml shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": null,
+        },
+        {
             "label": "Build docs (rulez)",
             "type": "shell",
             "command": "./bin/sphinx-build dev/rulez/docs docs-html/rulez/",
