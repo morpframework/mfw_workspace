@@ -8,7 +8,7 @@
             "name": "Python: MorpCC Demo CMS",
             "type": "python",
             "request": "launch",
-            "python": "${workspaceFolder}/bin/python",
+            "python": "${workspaceFolder}/venv/bin/python",
             "module": "morpfw.cli",
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
