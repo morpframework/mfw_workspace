@@ -12,6 +12,7 @@ from alembic import op
 import sqlalchemy as sa
 import morpfw.crud.storage.sqlstorage
 import sqlalchemy_jsonfield.jsonfield
+import sqlalchemy_utils.types.uuid
 ${imports if imports else ""}
 
 # revision identifiers, used by Alembic.
