@@ -50,6 +50,8 @@
             "group": "test",
             "options": {
                 "env": {
+                    "BUILDOUT_BINDIR": "${workspaceRoot}/bin",
+ 
                     "ELASTICSEARCH_EXECUTABLE": "${workspaceRoot}/parts/elasticsearch/bin/elasticsearch"
                 }
             }
@@ -61,6 +63,7 @@
             "group": "test",
             "options": {
                 "env": {
+                    "BUILDOUT_BINDIR": "${workspaceRoot}/bin",
                     "ELASTICSEARCH_EXECUTABLE": "${workspaceRoot}/parts/elasticsearch/bin/elasticsearch"
                 }
             }
@@ -72,6 +75,7 @@
             "group": "test",
             "options": {
                 "env": {
+                    "BUILDOUT_BINDIR": "${workspaceRoot}/bin",
                     "ELASTICSEARCH_EXECUTABLE": "${workspaceRoot}/parts/elasticsearch/bin/elasticsearch"
                 }
             }

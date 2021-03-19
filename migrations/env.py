@@ -82,6 +82,7 @@ def run_migrations_offline():
                 target_metadata=target_metadata.get(name),
                 literal_binds=True,
                 dialect_opts={"paramstyle": "named"},
+                compare_type=True,
             )
             with context.begin_transaction():
                 context.run_migrations(engine_name=name)
@@ -124,6 +125,7 @@ def run_migrations_online():
                 upgrade_token="%s_upgrades" % name,
                 downgrade_token="%s_downgrades" % name,
                 target_metadata=target_metadata.get(name),
+                compare_type=True,
             )
             context.run_migrations(engine_name=name)
 

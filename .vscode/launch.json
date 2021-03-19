@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "python": "${workspaceFolder}/venv/bin/python",
-            "module": "morpfw.cli",
+            "module": "morpfw.cli.main",
             "console": "internalConsole",
             "internalConsoleOptions": "openOnSessionStart",
             "serverReadyAction": {
